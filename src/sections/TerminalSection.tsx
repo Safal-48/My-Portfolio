@@ -14,6 +14,7 @@ const TerminalSection: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
   const [mode, setMode] = useState<'normal' | 'resume_select'>('normal');
   const terminalEndRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
 
   const quickCommands = [
     'help',
@@ -25,6 +26,10 @@ const TerminalSection: React.FC = () => {
   ];
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [history]);
 
