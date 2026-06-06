@@ -64,7 +64,7 @@ const HeroSection: React.FC = () => {
           inactiveTransition="transform 0.6s ease-in-out"
         >
           <img
-            src="/happy-portrait.png"
+            src="/smiling-portrait.png"
             alt="Safal Pal portrait"
             className="w-full h-auto object-contain select-none pointer-events-none"
             draggable={false}
