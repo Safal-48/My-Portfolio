@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import FadeIn from '../components/FadeIn';
 import Magnet from '../components/Magnet';
 import ContactButton from '../components/ContactButton';
@@ -63,12 +64,24 @@ const HeroSection: React.FC = () => {
           activeTransition="transform 0.3s ease-out"
           inactiveTransition="transform 0.6s ease-in-out"
         >
-          <img
-            src="/smiling-portrait.png"
-            alt="Safal Pal portrait"
-            className="w-full h-auto object-contain select-none pointer-events-none"
-            draggable={false}
-          />
+          <motion.div
+            animate={{
+              y: [0, -12, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-full h-auto"
+          >
+            <img
+              src="/smiling-portrait.png"
+              alt="Safal Pal portrait"
+              className="w-full h-auto object-contain select-none pointer-events-none"
+              draggable={false}
+            />
+          </motion.div>
         </Magnet>
       </FadeIn>
 
@@ -82,9 +95,6 @@ const HeroSection: React.FC = () => {
               style={{ fontSize: 'clamp(0.7rem, 1.3vw, 1.4rem)' }}
             >
               Architecting Intelligent Systems & Scalable Data Solutions
-            </p>
-            <p className="text-[#D7E2EA]/60 uppercase tracking-widest text-[9px] sm:text-xs">
-              🏆 6X HACKATHON WINNER
             </p>
           </div>
         </FadeIn>

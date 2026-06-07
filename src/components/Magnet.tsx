@@ -23,12 +23,12 @@ const Magnet: React.FC<MagnetProps> = ({
     const el = ref.current;
     if (!el) return;
 
-    const onMouseMove = (e: MouseEvent) => {
+    const handleMove = (clientX: number, clientY: number) => {
       const rect = el.getBoundingClientRect();
       const centerX = rect.left + rect.width / 2;
       const centerY = rect.top + rect.height / 2;
-      const distX = e.clientX - centerX;
-      const distY = e.clientY - centerY;
+      const distX = clientX - centerX;
+      const distY = clientY - centerY;
       const isNear =
         Math.abs(distX) < rect.width / 2 + padding &&
         Math.abs(distY) < rect.height / 2 + padding;
@@ -43,16 +43,38 @@ const Magnet: React.FC<MagnetProps> = ({
       }
     };
 
+    const onMouseMove = (e: MouseEvent) => {
+      handleMove(e.clientX, e.clientY);
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        handleMove(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    };
+
     const onMouseLeave = () => {
+      el.style.transition = inactiveTransition;
+      el.style.transform = 'translate3d(0, 0, 0)';
+    };
+
+    const onTouchEnd = () => {
       el.style.transition = inactiveTransition;
       el.style.transform = 'translate3d(0, 0, 0)';
     };
 
     window.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseleave', onMouseLeave);
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
+    window.addEventListener('touchend', onTouchEnd);
+    window.addEventListener('touchcancel', onTouchEnd);
+
     return () => {
       window.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseleave', onMouseLeave);
+      window.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('touchend', onTouchEnd);
+      window.removeEventListener('touchcancel', onTouchEnd);
     };
   }, [padding, strength, activeTransition, inactiveTransition]);
 

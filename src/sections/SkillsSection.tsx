@@ -56,8 +56,6 @@ const skillGroups: SkillGroup[] = [
       'Tableau',
       'Power BI',
       'Machine Learning',
-      'Random Forest',
-      'SMOTE',
       'Matplotlib',
       'Seaborn',
       'Flask',
