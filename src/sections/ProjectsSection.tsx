@@ -46,9 +46,9 @@ const projects: Project[] = [
     name: 'Chat-Rooms',
     category: 'Collaboration & Socket.io',
     link: 'https://github.com/Safal-48/Google-Solution-Challenge-Cognify',
-    col1img1: 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=600&auto=format&fit=crop',
-    col1img2: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600&auto=format&fit=crop',
-    col2img: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop',
+    col1img1: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop',
+    col1img2: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop',
+    col2img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop',
   },
   {
     number: '05',
@@ -56,7 +56,7 @@ const projects: Project[] = [
     category: 'Video Pipeline & ElevenLabs API',
     link: 'https://github.com/Safal-48/VidSnapAI',
     col1img1: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=600&auto=format&fit=crop',
-    col1img2: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=600&auto=format&fit=crop',
+    col1img2: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=600&auto=format&fit=crop',
     col2img: '/vidsnap-ai.jpg',
   },
   {
@@ -65,7 +65,7 @@ const projects: Project[] = [
     category: 'MERN Stack & Google Gemini AI',
     link: 'https://github.com/Safal-48/AI-Career-Navigator',
     col1img1: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=600&auto=format&fit=crop',
-    col1img2: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=600&auto=format&fit=crop',
+    col1img2: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=600&auto=format&fit=crop',
     col2img: '/ai-career-navigator.jpg',
   },
   {
