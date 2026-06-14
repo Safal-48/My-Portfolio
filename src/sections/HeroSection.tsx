@@ -76,7 +76,7 @@ const HeroSection: React.FC = () => {
             className="w-full h-auto"
           >
             <img
-              src="/smiling-portrait.png"
+              src="/safal-avatar.png"
               alt="Safal Pal portrait"
               className="w-full h-auto object-contain select-none pointer-events-none"
               draggable={false}
