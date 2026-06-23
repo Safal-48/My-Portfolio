@@ -76,7 +76,7 @@ const WallOfFame: React.FC = () => {
       </FadeIn>
 
       {/* Timeline items list */}
-      <div className="max-w-5xl mx-auto flex flex-col">
+      <div className="max-w-6xl mx-auto flex flex-col">
         {achievements.map((h, i) => (
           <FadeIn key={h.rank} delay={i * 0.08} y={30}>
             <motion.div

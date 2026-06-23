@@ -171,7 +171,7 @@ const SkillsSection: React.FC = () => {
       </FadeIn>
 
       {/* Grid Layout */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-24">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-24">
         {skillGroups.map((group, index) => (
           <FadeIn key={group.category} delay={index * 0.08} y={30}>
             <div className="flex flex-col gap-4 border-l border-[#D7E2EA]/20 pl-6 py-2 h-full">
@@ -200,7 +200,7 @@ const SkillsSection: React.FC = () => {
       </div>
 
       {/* Dedicated Certifications Grid */}
-      <div className="max-w-5xl mx-auto border-t border-[#D7E2EA]/10 pt-16">
+      <div className="max-w-6xl mx-auto border-t border-[#D7E2EA]/10 pt-16">
         <FadeIn delay={0} y={30}>
           <h3 className="hero-heading font-black uppercase text-2xl sm:text-3xl mb-10 tracking-wider">
             Certifications

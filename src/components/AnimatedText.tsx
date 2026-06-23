@@ -15,26 +15,43 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className = '', style
     offset: ['start 0.8', 'end 0.2'],
   });
 
-  const characters = text.split('');
+  const words = text.split(' ');
 
   return (
     <p
       ref={ref}
       className={`${className}`}
-      style={{ ...style, display: 'flex', flexWrap: 'wrap', gap: 0 }}
+      style={{ ...style, display: 'block' }}
       aria-label={text}
     >
-      {characters.map((char, i) => {
-        const start = i / characters.length;
-        const end = Math.min(start + 1 / characters.length + 0.05, 1);
+      {words.map((word, wIdx) => {
+        const start = wIdx / words.length;
+        const end = Math.min(start + 1 / words.length + 0.05, 1);
         return (
-          <CharacterSpan
-            key={i}
-            char={char}
-            scrollYProgress={scrollYProgress}
-            start={start}
-            end={end}
-          />
+          <span
+            key={wIdx}
+            style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
+          >
+            {word.split('').map((char, cIdx) => (
+              <CharacterSpan
+                key={cIdx}
+                char={char}
+                scrollYProgress={scrollYProgress}
+                start={start}
+                end={end}
+              />
+            ))}
+            {wIdx < words.length - 1 && (
+              <motion.span
+                aria-hidden="true"
+                style={{
+                  opacity: useTransform(scrollYProgress, [start, end], [0.15, 1]),
+                }}
+              >
+                &nbsp;
+              </motion.span>
+            )}
+          </span>
         );
       })}
     </p>

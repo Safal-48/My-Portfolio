@@ -57,7 +57,7 @@ const ExperienceSection: React.FC = () => {
       </FadeIn>
 
       {/* Experience list */}
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {jobs.map((job, i) => (
           <FadeIn key={job.number} delay={i * 0.1} y={30}>
             <div

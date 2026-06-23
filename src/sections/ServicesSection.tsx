@@ -62,7 +62,7 @@ const ServicesSection: React.FC = () => {
       </FadeIn>
 
       {/* Service list */}
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {services.map((service, i) => (
           <FadeIn key={service.number} delay={i * 0.1} y={30}>
             <div

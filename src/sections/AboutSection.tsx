@@ -97,7 +97,7 @@ const AboutSection: React.FC = () => {
           <div className="
             relative p-8 sm:p-10 md:p-12 rounded-[32px] 
             border border-[#D7E2EA]/10 bg-[#D7E2EA]/3 backdrop-blur-md 
-            shadow-[0_20px_50px_rgba(0,0,0,0.3)] max-w-[720px]
+            shadow-[0_20px_50px_rgba(0,0,0,0.3)] max-w-[880px]
           ">
             {/* Subtle corner light accents */}
             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#D7E2EA]/20 rounded-tl-[32px]" />
@@ -106,7 +106,7 @@ const AboutSection: React.FC = () => {
             <AnimatedText
               text="I am a passionate Full Stack Developer and AI/ML Engineer dedicated to building intelligent, scalable, and user-centric web applications. I specialize in designing robust architectures, engineering smart data solutions, and crafting seamless digital experiences. Driven by curiosity and code, I turn complex ideas into refined software solutions."
               className="text-[#D7E2EA] font-medium leading-relaxed"
-              style={{ fontSize: 'clamp(1rem, 1.8vw, 1.35rem)', letterSpacing: '0.015em' }}
+              style={{ fontSize: 'clamp(1.1rem, 1.9vw, 1.55rem)', letterSpacing: '0.015em' }}
             />
           </div>
 
