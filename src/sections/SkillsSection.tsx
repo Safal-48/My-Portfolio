@@ -80,6 +80,18 @@ interface Certification {
 
 const certifications: Certification[] = [
   {
+    name: 'Deloitte Technology Job Simulation',
+    org: 'Deloitte / Forage',
+    date: 'June 2026',
+    icon: '💻',
+  },
+  {
+    name: 'Deloitte Data Analytics Job Simulation',
+    org: 'Deloitte / Forage',
+    date: 'June 2026',
+    icon: '📊',
+  },
+  {
     name: 'GenAI Powered Data Analytics Job Simulation',
     org: 'TATA / Forage',
     date: 'April 2026',

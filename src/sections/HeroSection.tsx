@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
       style={{ overflowX: 'clip' }}
     >
       {/* Navbar */}
-      <FadeIn delay={0} y={-20} as="nav">
+      <FadeIn delay={0} y={-20} as="nav" animateDirectly={true}>
         <nav className="flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8">
           {navLinks.map((link) => (
             <a
@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
 
       {/* Hero Heading */}
       <div className="overflow-hidden">
-        <FadeIn delay={0.15} y={40}>
+        <FadeIn delay={0.15} y={40} animateDirectly={true}>
           <h1
             className="
               hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full
@@ -48,47 +48,55 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Portrait — centered absolutely */}
-      <FadeIn
-        delay={0.6}
-        y={30}
+      <div
         className="
           absolute left-1/2 -translate-x-1/2 z-10
           w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]
+          aspect-square
           top-1/2 -translate-y-1/2
           sm:top-auto sm:translate-y-0 sm:bottom-0
+          sm:left-auto sm:translate-x-0 sm:right-[5%] lg:right-[8%]
         "
       >
-        <Magnet
-          padding={150}
-          strength={3}
-          activeTransition="transform 0.3s ease-out"
-          inactiveTransition="transform 0.6s ease-in-out"
+        <FadeIn
+          delay={0.6}
+          y={30}
+          className="w-full h-full flex items-end justify-center"
+          animateDirectly={true}
         >
-          <motion.div
-            animate={{
-              y: [0, -12, 0],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+          <Magnet
+            padding={150}
+            strength={3}
+            activeTransition="transform 0.3s ease-out"
+            inactiveTransition="transform 0.6s ease-in-out"
             className="w-full h-auto"
           >
-            <img
-              src="/safal-avatar.png"
-              alt="Safal Pal portrait"
-              className="w-full h-auto object-contain select-none pointer-events-none"
-              draggable={false}
-            />
-          </motion.div>
-        </Magnet>
-      </FadeIn>
+            <motion.div
+              animate={{
+                y: [0, -12, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="w-full h-auto"
+            >
+              <img
+                src="/safal-avatar-v6.png"
+                alt="Safal Pal portrait"
+                className="w-full h-auto object-contain select-none pointer-events-none"
+                draggable={false}
+              />
+            </motion.div>
+          </Magnet>
+        </FadeIn>
+      </div>
 
       {/* Bottom bar */}
-      <div className="mt-auto flex justify-between items-end px-6 md:px-10 pb-7 sm:pb-8 md:pb-10">
+      <div className="mt-auto flex flex-col sm:flex-row justify-start items-start sm:items-end px-6 md:px-10 pb-7 sm:pb-8 md:pb-10 z-20 gap-6 sm:gap-12">
         {/* Left description */}
-        <FadeIn delay={0.35} y={20}>
+        <FadeIn delay={0.35} y={20} animateDirectly={true}>
           <div className="flex flex-col gap-1.5 max-w-[180px] sm:max-w-[240px] md:max-w-[320px]">
             <p
               className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug"
@@ -100,7 +108,7 @@ const HeroSection: React.FC = () => {
         </FadeIn>
 
         {/* Action Buttons */}
-        <FadeIn delay={0.5} y={20} className="flex flex-col sm:flex-row gap-3 items-end sm:items-center">
+        <FadeIn delay={0.5} y={20} className="flex flex-row gap-3 items-center" animateDirectly={true}>
           <a
             href="#projects"
             className="

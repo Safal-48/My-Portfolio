@@ -10,6 +10,7 @@ interface FadeInProps {
   y?: number;
   className?: string;
   as?: ElementType;
+  animateDirectly?: boolean;
 }
 
 const FadeIn: React.FC<FadeInProps> = ({
@@ -20,6 +21,7 @@ const FadeIn: React.FC<FadeInProps> = ({
   y = 30,
   className = '',
   as = 'div',
+  animateDirectly = false,
 }) => {
   const MotionComponent = motion.create(as as ElementType);
 
@@ -27,8 +29,9 @@ const FadeIn: React.FC<FadeInProps> = ({
     <MotionComponent
       className={className}
       initial={{ opacity: 0, x, y }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: '50px', amount: 0 }}
+      animate={animateDirectly ? { opacity: 1, x: 0, y: 0 } : undefined}
+      whileInView={!animateDirectly ? { opacity: 1, x: 0, y: 0 } : undefined}
+      viewport={!animateDirectly ? { once: true, margin: '50px', amount: 0 } : undefined}
       transition={{
         duration,
         delay,
